@@ -25,6 +25,10 @@ form.addEventListener("submit", async (event) => {
 
     const response = await fetch(url);
 
+    if(!response.ok){
+      throw new Error("Fail to find city");
+    }
+
     const data = await response.json();
 
     if (!data.results || data.results.length === 0) {
