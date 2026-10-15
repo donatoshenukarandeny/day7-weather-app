@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Weather App</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="weather-app">
+    <h1>Weather App</h1>
+    <p>Check the current weather in any city.</p>
+
+    <form id="weather-form">
+      <label for="city-input">Enter a city</label>
+      <input
+        id="city-input"
+        type="text"
+        placeholder="e.g. Colombo"
+        required
+      >
+      <button id="get-weather" type="submit">Get Weather</button>
+    </form>
+
+    <p id="status" role="status"></p>
+    <section id="weather-result" aria-live="polite"></section>
+  </main>
+</body>
+</html>

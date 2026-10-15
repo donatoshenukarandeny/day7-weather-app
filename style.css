@@ -1,0 +1,220 @@
+
+/* =========================
+   1. Basic Reset
+========================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================
+   2. Body
+========================= */
+
+body {
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0b1220, #172554);
+  color: #ffffff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 24px;
+}
+
+/* =========================
+   3. Weather App Card
+========================= */
+
+.weather-app {
+  width: 100%;
+  max-width: 440px;
+  padding: 32px;
+
+  background: rgba(23, 32, 51, 0.95);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 24px;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================
+   4. Heading and Description
+========================= */
+
+.weather-app h1 {
+  margin-bottom: 12px;
+  text-align: center;
+  font-size: 32px;
+  letter-spacing: -0.5px;
+}
+
+.weather-app > p {
+  margin-bottom: 24px;
+  text-align: center;
+  color: #b8c4d9;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* =========================
+   5. Weather Form
+========================= */
+
+#weather-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#weather-form label {
+  color: #cbd5e1;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =========================
+   6. City Input
+========================= */
+
+#city-input {
+  width: 100%;
+  padding: 14px 16px;
+
+  border: 1px solid #475569;
+  border-radius: 12px;
+
+  background: #0f172a;
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 16px;
+
+  outline: none;
+  transition: border-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+#city-input::placeholder {
+  color: #64748b;
+}
+
+#city-input:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.15);
+}
+
+/* =========================
+   7. Get Weather Button
+========================= */
+
+#get-weather {
+  width: 100%;
+  padding: 14px 18px;
+  margin-top: 4px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: linear-gradient(135deg, #6366f1, #3b82f6);
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+
+  cursor: pointer;
+
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.25);
+
+  transition: transform 0.2s ease,
+              box-shadow 0.2s ease,
+              filter 0.2s ease,
+              opacity 0.2s ease;
+}
+
+#get-weather:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(59, 130, 246, 0.4);
+  filter: brightness(1.1);
+}
+
+#get-weather:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+#get-weather:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* =========================
+   8. Status and Weather Result
+========================= */
+
+#status {
+  margin-top: 20px;
+  padding: 14px;
+
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 12px;
+
+  background: #0f172a;
+  color: #e2e8f0;
+
+  font-size: 14px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+#status:empty {
+  display: none;
+}
+
+/* =========================
+   9. Responsive Design
+========================= */
+
+@media (max-width: 480px) {
+  body {
+    padding: 16px;
+  }
+
+  .weather-app {
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+
+  .weather-app h1 {
+    font-size: 28px;
+  }
+
+  .weather-app > p {
+    font-size: 14px;
+  }
+
+  #city-input,
+  #get-weather {
+    padding: 13px;
+  }
+}
+
+/* =========================
+   10. Accessibility
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
